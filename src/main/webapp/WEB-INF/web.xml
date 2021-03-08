@@ -1,0 +1,89 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.css</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.js</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>reg</servlet-name>
+    <servlet-class>com.midka.RegistrationServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>reg</servlet-name>
+    <url-pattern>/RegistrationServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>log</servlet-name>
+    <servlet-class>com.midka.LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>log</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>Adlog</servlet-name>
+    <servlet-class>com.midka.AdminLoginServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Adlog</servlet-name>
+    <url-pattern>/AdminLoginServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>com.midka.LogoutServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AdLogout</servlet-name>
+    <servlet-class>com.midka.AdminLogoutServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdLogout</servlet-name>
+    <url-pattern>/AdminLogoutServlet</url-pattern>
+  </servlet-mapping>
+
+
+
+
+  <servlet>
+    <servlet-name>checkOrders</servlet-name>
+    <servlet-class>com.midka.CheckOrdersServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>checkOrders</servlet-name>
+    <url-pattern>/CheckOrdersServlet</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+</web-app>
