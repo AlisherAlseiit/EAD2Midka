@@ -65,7 +65,7 @@
             </c:forEach>
             </tbody>
         </table>
-
+        <p><c:out value="${message}"/></p>
     </div>
 </div>
 </body>

@@ -168,6 +168,7 @@ public class ProductControllerServlet extends HttpServlet {
         PrintWriter out=response.getWriter();
         Cookie ck[] = request.getCookies();
         long id = Long.parseLong(request.getParameter("id"));
+
         if (ck != null) {
             int i = 0;
             while (!ck[i].getName().equals("userId")) {
@@ -175,9 +176,9 @@ public class ProductControllerServlet extends HttpServlet {
             }
 
             String userId = ck[i].getValue();
-
             productDao.createOrder(id, Long.parseLong(userId));
             response.sendRedirect("userList");
+
 
 
         }

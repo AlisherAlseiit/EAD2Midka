@@ -43,6 +43,7 @@ public class LoginServlet extends HttpServlet {
 
             if(name.equals(dbName) && password.equals(dbPassword)){
                 Cookie ck=new Cookie("userId", String.valueOf(dbId));
+                ck.setMaxAge(60 * 60);
                 response.addCookie(ck);
                 request.getRequestDispatcher("userMainPage.jsp").include(request, response);
 

@@ -49,6 +49,8 @@
   </servlet-mapping>
 
 
+
+
   <servlet>
     <servlet-name>logout</servlet-name>
     <servlet-class>com.midka.LogoutServlet</servlet-class>
@@ -58,6 +60,18 @@
     <servlet-name>logout</servlet-name>
     <url-pattern>/LogoutServlet</url-pattern>
   </servlet-mapping>
+
+
+  <filter>
+    <filter-name>UCFilter</filter-name>
+    <filter-class>com.midka.filters.UserLogoutFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>UCFilter</filter-name>
+    <url-pattern>/LogoutServlet</url-pattern>
+  </filter-mapping>
+
 
   <servlet>
     <servlet-name>AdLogout</servlet-name>
@@ -69,6 +83,15 @@
     <url-pattern>/AdminLogoutServlet</url-pattern>
   </servlet-mapping>
 
+  <filter>
+    <filter-name>ACFilter</filter-name>
+    <filter-class>com.midka.filters.AdminCookieFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>ACFilter</filter-name>
+    <url-pattern>/AdminLogoutServlet</url-pattern>
+  </filter-mapping>
 
 
 
