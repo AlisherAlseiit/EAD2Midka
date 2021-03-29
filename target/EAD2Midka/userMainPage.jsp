@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
-<%@ page isELIgnored="false"%>
+<%@ page isELIgnored="false" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 </head>
@@ -39,6 +41,18 @@
 <div class="row">
     <div class="container">
         <h3 class="text-center">List of Products</h3>
+        <%
+            String name = "name: " + request.getAttribute("userName");
+
+            if (request.getAttribute("userName") == null) {
+
+                name = "";
+            }
+
+
+        %>
+        <p style="color:green"><% out.println(name);%></p>
+
         <hr>
         <br>
         <table class="table table-bordered">
@@ -46,7 +60,7 @@
             <tr>
 
                 <th>Product name</th>
-                <th>Product description </th>
+                <th>Product description</th>
                 <th>Product Price</th>
                 <th>Actions</th>
             </tr>

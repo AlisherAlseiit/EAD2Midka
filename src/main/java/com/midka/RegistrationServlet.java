@@ -38,6 +38,8 @@ public class RegistrationServlet extends HttpServlet {
             ps.setString(2, password);
             ps.executeUpdate();
 
+
+            request.setAttribute("message", "success");
             request.getRequestDispatcher("login.jsp").include(request, response);
 
 

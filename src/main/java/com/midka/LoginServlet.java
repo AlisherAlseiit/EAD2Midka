@@ -45,6 +45,7 @@ public class LoginServlet extends HttpServlet {
                 Cookie ck=new Cookie("userId", String.valueOf(dbId));
                 ck.setMaxAge(60 * 60);
                 response.addCookie(ck);
+                request.setAttribute("userName", name);
                 request.getRequestDispatcher("userMainPage.jsp").include(request, response);
 
 

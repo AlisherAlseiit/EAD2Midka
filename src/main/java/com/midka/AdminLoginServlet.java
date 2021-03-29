@@ -48,7 +48,8 @@ public class AdminLoginServlet extends HttpServlet {
                 Cookie ck=new Cookie("adminId", String.valueOf(dbId));
                 ck.setMaxAge(60 * 60);
                 response.addCookie(ck);
-                request.getRequestDispatcher("mainPage.jsp").include(request, response);
+                request.setAttribute("adminName", name);
+                request.getRequestDispatcher("indexPage.jsp").include(request, response);
             }else{
 //                response.sendRedirect("login.jsp");
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");

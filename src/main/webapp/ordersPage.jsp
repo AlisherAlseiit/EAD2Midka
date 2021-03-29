@@ -33,7 +33,7 @@
 
 <div class="row">
     <div class="container">
-        <h3 class="text-center">List of Orders</h3>
+        <h3 class="text-center"> <% String list = config.getInitParameter("orders"); out.print(list); %> </h3>
         <hr>
 
         <br>

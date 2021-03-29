@@ -48,7 +48,7 @@
                                 Edit Product
                                 </c:if>
                                 <c:if test="${product == null}">
-                                Add New Product
+                                <jsp:include page="addNewProduct.jsp" />
                                 </c:if>
                             </h2>
                         </caption>

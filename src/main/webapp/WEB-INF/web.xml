@@ -107,6 +107,26 @@
 
 
 
+  <servlet>
+    <servlet-name>order</servlet-name>
+    <jsp-file>/ordersPage.jsp</jsp-file>
+
+    <init-param>
+      <param-name>orders</param-name>
+      <param-value>List Of Orders</param-value>
+    </init-param>
+
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>order</servlet-name>
+    <url-pattern>/ordersPage.jsp</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
 
 
 </web-app>
