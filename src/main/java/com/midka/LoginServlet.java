@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
 
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM Registration WHERE name=? and password=?");
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM users WHERE name=? and password=?");
             ps.setString(1, name);
             ps.setString(2, password);
             ResultSet resultSet = ps.executeQuery();

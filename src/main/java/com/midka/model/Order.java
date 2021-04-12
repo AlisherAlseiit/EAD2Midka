@@ -1,8 +1,15 @@
 package com.midka.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Ord")
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long orderId;
+
     private Long registration_id;
     private Long product_id;
     private String buyerName;

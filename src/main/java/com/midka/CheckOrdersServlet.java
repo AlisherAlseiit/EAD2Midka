@@ -53,7 +53,7 @@ public class CheckOrdersServlet extends HttpServlet {
                 Long productId = resultSet.getLong("product_id");
 
                 //
-                PreparedStatement preparedStatement = connection.prepareStatement("SELECT name from Registration where id=?");
+                PreparedStatement preparedStatement = connection.prepareStatement("SELECT name from users where id=?");
 
                 preparedStatement.setLong(1, registrationID);
 

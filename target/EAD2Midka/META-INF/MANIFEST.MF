@@ -2,4 +2,8 @@ Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
 Built-By: Алишер
 Build-Jdk: 14.0.1
+Implementation-Title: EAD2Midka Maven Webapp
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: com.midka
+Main-Class: ${start-class}
 
