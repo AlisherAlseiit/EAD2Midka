@@ -1,5 +1,7 @@
 package com.midka;
 
+import com.midka.exception.ApiRequestException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,9 +53,11 @@ public class AdminLoginServlet extends HttpServlet {
                 request.setAttribute("adminName", name);
                 request.getRequestDispatcher("indexPage.jsp").include(request, response);
             }else{
-//                response.sendRedirect("login.jsp");
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
+
+                response.sendRedirect("login.jsp");
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("adminLogin.html");
                 requestDispatcher.include(request, response);
+
             }
 
 
@@ -68,6 +72,6 @@ public class AdminLoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("adminLogin.html");
     }
 }

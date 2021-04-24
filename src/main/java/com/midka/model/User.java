@@ -1,22 +1,19 @@
 package com.midka.model;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "users")
-public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class User implements Serializable {
+
+
     private Long id;
-    private String name;
+    private String name = null;
 
-    private String password;
+    private String password = null;
+    boolean registeredIn = false;
 
 
     public User() {
@@ -49,4 +46,8 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+
+
 }

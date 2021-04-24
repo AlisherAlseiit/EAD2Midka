@@ -50,7 +50,8 @@ public class LoginServlet extends HttpServlet {
 
 
             }else{
-//                response.sendRedirect("login.jsp");
+
+
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
                 requestDispatcher.include(request, response);
             }

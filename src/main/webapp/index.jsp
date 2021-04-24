@@ -81,9 +81,9 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
+            <a href="registration.jsp">registration</a>
             <a href="adminLogin.jsp">login as admin</a>
             <a href="login.jsp">login as user</a>
-            <a href="registration.jsp">registration</a>
         </div>
     </div>
 </div>

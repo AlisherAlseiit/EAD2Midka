@@ -1,18 +1,19 @@
 package com.midka.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.sql.*;
 
-@Entity
-@Table(name = "admin")
-public class Admin {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Admin implements Serializable {
+
+
     private Long id;
-    private String name;
+    private String name = null;
+    private String password = null;
 
-    private String password;
 
+    private boolean amILogin = false;
 
     public Admin() {
     }
@@ -44,4 +45,6 @@ public class Admin {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }

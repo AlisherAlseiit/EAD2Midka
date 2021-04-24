@@ -16,7 +16,7 @@
 
 
     <input type="text" class="register-input" name="user" required="required" placeholder="user">
-     <input type="password"  class="register-input" name="password" required="required" placeholder="password">
+    <input type="password"  class="register-input" name="password" required="required" placeholder="password">
 
     <input type="submit" value="Create Account" class="register-button" required = "true">
 </form>

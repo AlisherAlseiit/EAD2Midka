@@ -33,7 +33,7 @@ public class RegistrationServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
 
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO Registration( name, password)  VALUES (?,?)");
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO users( name, password)  VALUES (?,?)");
             ps.setString(1, name);
             ps.setString(2, password);
             ps.executeUpdate();

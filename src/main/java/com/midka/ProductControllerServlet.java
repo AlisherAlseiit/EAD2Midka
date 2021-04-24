@@ -1,7 +1,9 @@
 package com.midka;
 
 import com.midka.Dao.ProductDao;
+import com.midka.exception.ApiRequestException;
 import com.midka.model.Product;
+import org.springframework.http.ResponseEntity;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -136,6 +138,10 @@ public class ProductControllerServlet extends HttpServlet {
         String description = request.getParameter("description");
         double price = Double.parseDouble(request.getParameter("price"));
 
+        if (price == 0){
+            throw new ApiRequestException("You cannot set price as 0 ");
+        }
+
 
         Product newProduct = new Product(name, description, price);
         productDao.insertProduct(newProduct);
@@ -150,7 +156,12 @@ public class ProductControllerServlet extends HttpServlet {
         String description = request.getParameter("description");
         double price = Double.parseDouble(request.getParameter("price"));
 
-        Product newProduct = new Product(id, name, description, price);
+        Product  newProduct = new Product();
+        newProduct.setId(id);
+        newProduct.setName(name);
+        newProduct.setPrice(price);
+        newProduct.setDescription(description);
+
 
         productDao.updateProducts(newProduct);
 

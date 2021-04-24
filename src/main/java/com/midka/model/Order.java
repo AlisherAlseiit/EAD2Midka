@@ -1,19 +1,19 @@
 package com.midka.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "Ord")
-public class Order {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Order implements Serializable {
+
+
     private  Long orderId;
 
     private Long registration_id;
     private Long product_id;
-    private String buyerName;
-    private String productName;
+    private String buyerName = null;
+    private String productName = null;
+
 
     public Order() {
     }

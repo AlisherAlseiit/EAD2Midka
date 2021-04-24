@@ -1,16 +1,14 @@
 package com.midka.model;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "product")
-public class Product {
+import java.io.Serializable;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Product implements Serializable {
+
+
     private Long id;
-    private String name;
-    private String description;
+    private String name = null;
+    private String description = null;
     private double price;
 
 
@@ -19,12 +17,7 @@ public class Product {
     }
 
 
-    public Product(Long id, String name, String description, double price) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-    }
+
 
     public Long getId() {
         return id;
