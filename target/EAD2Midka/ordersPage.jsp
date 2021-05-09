@@ -42,8 +42,8 @@
             <tr>
 
                 <th>Order Id</th>
-                <th>Buyer Id</th>
-                <th>Product Id</th>
+                <th>Buyer Name</th>
+                <th>Product Name</th>
 
             </tr>
             </thead>

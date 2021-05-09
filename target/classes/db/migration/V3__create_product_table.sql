@@ -3,5 +3,6 @@ CREATE TABLE product(
                         name varchar,
                         description varchar,
                         price double precision,
+                        img varchar,
                         PRIMARY KEY(id)
 )

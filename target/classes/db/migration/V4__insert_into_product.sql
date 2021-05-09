@@ -1,5 +1,6 @@
-INSERT INTO Product(name, description, price) VALUES ('IPHONE7', '7', 120);
-INSERT INTO Product(name, description, price) VALUES ('IPHONE8', '8', 140);
-INSERT INTO Product(name, description, price) VALUES ('IPHONE9', '9', 150);
-INSERT INTO Product(name, description, price) VALUES ('IPHONE10', '10', 160);
-INSERT INTO Product(name, description, price) VALUES ('IPHONE11', '11', 170);
+INSERT INTO Product(name, description, price, img) VALUES ('IPHONE6', 'Most operations on the iPhone are performed using the touch screen display', 150, 'https://assets.swappie.com/iPhone-6s-Plus-rose-gold-back.png');
+INSERT INTO Product(name, description, price, img) VALUES ('IPHONE7', 'has a sleek, minimalist design', 120, 'https://assets.swappie.com/iPhone732GBMattaMusta-1-2.jpg');
+INSERT INTO Product(name, description, price, img) VALUES ('IPHONE8', 'differs from other smartphones in its lack of buttons.', 140, 'https://nout.kz/upload/iblock/33d/MQ8L2_3.jpg');
+INSERT INTO Product(name, description, price, img) VALUES ('IPHONEXS', 'Some description', 160, 'https://nout.kz/upload/iblock/c11/apple_silicone_case_stone_iphone_xs_max_mrwj2_1.1000x.jpg');
+INSERT INTO Product(name, description, price, img) VALUES ('IPHONE11', 'Some description', 170, 'https://alfa.kz/files/alfa/messages/1/4/1/7/3/14173200-iphone11-purple-select-2019.png');
+INSERT INTO Product(name, description, price, img) VALUES ('Xiaomi xiaomi Mi 11', 'smartphone was launched on 28th December 2020. The phone comes with a 6.81-inch touchscreen display', 450, 'https://www.giztop.com/media/catalog/product/cache/dc206057cdd42d7e34b9d36e347785ca/m/i/mi-11-global-black.jpg');

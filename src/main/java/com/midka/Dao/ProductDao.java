@@ -34,11 +34,12 @@ public class ProductDao {
     public void insertProduct(Product product) throws SQLException {
 
         PreparedStatement preparedStatement =
-                connection.prepareStatement("INSERT INTO Product(name, description, price) VALUES (?, ?, ?)");
+                connection.prepareStatement("INSERT INTO Product(name, description, price, img) VALUES (?, ?, ?, ?)");
 
         preparedStatement.setString(1, product.getName());
         preparedStatement.setString(2,product.getDescription());
         preparedStatement.setDouble(3, product.getPrice());
+        preparedStatement.setString(4, product.getImg());
 
         preparedStatement.executeUpdate();
     }
@@ -61,6 +62,7 @@ public class ProductDao {
         product.setId(resultSet.getLong("id"));
         product.setName(resultSet.getString("name"));
         product.setDescription(resultSet.getString("description"));
+        product.setImg(resultSet.getString("img"));
         product.setPrice(resultSet.getInt("price"));
 
 
@@ -83,6 +85,7 @@ public class ProductDao {
             product.setId(resultSet.getLong("id"));
             product.setName(resultSet.getString("name"));
             product.setDescription(resultSet.getString("description"));
+            product.setImg(resultSet.getString("img"));
             product.setPrice(resultSet.getInt("price"));
 
             products.add(product);
@@ -113,12 +116,13 @@ public class ProductDao {
     public boolean updateProducts(Product product) throws SQLException {
         boolean rowUpdated;
         PreparedStatement preparedStatement =
-                connection.prepareStatement("UPDATE Product SET name=?, description=?, price=? WHERE id=?");
+                connection.prepareStatement("UPDATE Product SET name=?, description=?, price=?, img=? WHERE id=?");
 
         preparedStatement.setString(1, product.getName());
         preparedStatement.setString(2, product.getDescription());
         preparedStatement.setDouble(3, product.getPrice());
-        preparedStatement.setLong(4, product.getId());
+        preparedStatement.setString(4, product.getImg());
+        preparedStatement.setLong(5, product.getId());
 
         rowUpdated = preparedStatement.executeUpdate() > 0;
 

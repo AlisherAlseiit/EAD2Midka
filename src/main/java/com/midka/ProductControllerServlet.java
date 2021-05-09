@@ -112,6 +112,7 @@ public class ProductControllerServlet extends HttpServlet {
         List<Product> listProduct = productDao.selectAllProducts();
 
         request.setAttribute("products", listProduct);
+        request.setAttribute("cool", request.getAttribute("message"));
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("userMainPage.jsp");
         requestDispatcher.forward(request, response);
     }
@@ -137,13 +138,14 @@ public class ProductControllerServlet extends HttpServlet {
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         double price = Double.parseDouble(request.getParameter("price"));
+        String img = request.getParameter("img");
 
         if (price == 0){
             throw new ApiRequestException("You cannot set price as 0 ");
         }
 
 
-        Product newProduct = new Product(name, description, price);
+        Product newProduct = new Product(name, description, price, img);
         productDao.insertProduct(newProduct);
         response.sendRedirect("list");
     }
@@ -155,12 +157,18 @@ public class ProductControllerServlet extends HttpServlet {
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         double price = Double.parseDouble(request.getParameter("price"));
+        String img = request.getParameter("img");
+
+        if (price == 0){
+            throw new ApiRequestException("You cannot set price as 0 ");
+        }
 
         Product  newProduct = new Product();
         newProduct.setId(id);
         newProduct.setName(name);
         newProduct.setPrice(price);
         newProduct.setDescription(description);
+        newProduct.setImg(img);
 
 
         productDao.updateProducts(newProduct);
@@ -181,7 +189,7 @@ public class ProductControllerServlet extends HttpServlet {
     }
 
 
-    private void addOrder(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+    private void addOrder(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
         PrintWriter out = response.getWriter();
         Cookie ck[] = request.getCookies();
         long id = Long.parseLong(request.getParameter("id"));
@@ -194,8 +202,10 @@ public class ProductControllerServlet extends HttpServlet {
 
             String userId = ck[i].getValue();
             productDao.createOrder(id, Long.parseLong(userId));
-            response.sendRedirect("userList");
-
+            request.setAttribute("message", "cool");
+//            response.sendRedirect("userList");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("userList");
+            requestDispatcher.forward(request, response);
 
         }
     }

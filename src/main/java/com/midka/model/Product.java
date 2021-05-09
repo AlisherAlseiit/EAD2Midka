@@ -10,14 +10,27 @@ public class Product implements Serializable {
     private String name = null;
     private String description = null;
     private double price;
+    private String img;
 
 
     public Product(){
 
     }
 
+    public Product(String name, String description, double price, String img) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.img = img;
+    }
 
+    public String getImg() {
+        return img;
+    }
 
+    public void setImg(String img) {
+        this.img = img;
+    }
 
     public Long getId() {
         return id;
@@ -51,12 +64,5 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public Product(String name, String description, double price) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
 
-
-
-    }
 }

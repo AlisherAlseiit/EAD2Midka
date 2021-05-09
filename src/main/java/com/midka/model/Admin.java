@@ -13,7 +13,7 @@ public class Admin implements Serializable {
     private String password = null;
 
 
-    private boolean amILogin = false;
+
 
     public Admin() {
     }

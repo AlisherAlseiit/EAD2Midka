@@ -72,6 +72,11 @@
                             <input type="text" value="<c:out value='${product.price}' />" class="form-control" name="price" required="required">
                         </fieldset>
 
+                        <fieldset class="form-group">
+                            <label>Product img</label>
+                            <input type="text" value="<c:out value='${product.img}' />" class="form-control" name="img" required="required">
+                        </fieldset>
+
                         <button type="submit" class="btn btn-success">Save</button>
                     </form>
                 </form>
